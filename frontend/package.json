@@ -1,0 +1,93 @@
+{
+    "name": "palmpay",
+    "productName": "PalmPay",
+    "version": "1.0.0",
+    "private": true,
+    "main": "electron/main.js",
+    "type": "module",
+    "description": "Secure contactless biometric payment system using palm recognition.",
+    "homepage": "https://github.com/anuragzete/PalmPay",
+    "author": "Anurag Zete",
+    "license": "MIT",
+  
+    "scripts": {
+      "dev": "vite",
+      "electron": "electron .",
+      "build": "vite build",
+      "preview": "vite preview",
+      "lint": "eslint .",
+      "dist": "npm run build && electron-builder"
+    },
+  
+    "build": {
+      "appId": "com.palmpay.app",
+      "productName": "PalmPay",
+  
+      "copyright":
+        "Copyright © 2026 Anurag Zete",
+  
+      "directories": {
+        "buildResources": "build"
+      },
+  
+      "files": [
+        "dist/**/*",
+        "electron/**/*",
+        "package.json"
+      ],
+  
+      "linux": {
+        "target": ["AppImage"],
+        "icon": "build/icon.png",
+        "category": "Office",
+        "synopsis": "Biometric payment application",
+        "description": "Secure palmprint-based payment system."
+      },
+  
+      "win": {
+        "target": ["nsis"],
+        "icon": "build/icon.ico"
+      },
+  
+      "nsis": {
+          "oneClick": false,
+          "allowToChangeInstallationDirectory": true,
+          "createDesktopShortcut": true,
+          "createStartMenuShortcut": true
+      }
+  },
+  "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/hands": "^0.4.1675469240",
+    "@stripe/react-stripe-js": "^5.4.1",
+    "@stripe/stripe-js": "^8.6.0",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/vite": "^4.1.18",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.11.0",
+    "react-webcam": "^7.2.0",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.23",
+    "electron": "^40.1.0",
+    "electron-builder": "^24.13.3",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "vite": "^7.2.4"
+  }
+}
